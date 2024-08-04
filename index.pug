@@ -1,0 +1,172 @@
+- var fix_centered="table__table-data--centered";
+- var fix_lefted="table-row__table-heading--lefted";
+
+doctype html
+|
+|
+html(lang="en")
+  head
+    meta(
+      charset="UTF-8"
+    )
+    meta(
+        name="viewport",
+        content="width=device-width, initial-scale=1.0"
+    )
+    title pug-CRM-Dashboard
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    |
+    |
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    |
+    |
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet")
+    |
+    |
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer")
+    |
+    |
+    link(rel="stylesheet", href="./style/style.css")
+  |
+  |
+  body
+    |
+    |
+    main
+      |
+      |
+      section.sidebar-product
+        div.container.container--flexed
+          |
+          |
+          h1.visually-hidden Dashboard
+          |
+          |
+          include sidebar.pug
+          |
+          |
+          // product 
+          |
+          |
+          section.product-wrapper
+            h2.subtitle Hello Evano 👋🏼,
+            div.wrapper-product
+              div.wrapper-title#myElement
+                h3.product__title All Customers
+                p.product__after-title Active Members
+              form(name="search-customer").search-customer
+                label.search-customer__label
+                  input(type="text",name="text",placeholder="Search").search-customer__input
+                  svg.search-customer__icon(width="24",height="24", aria-label="пошук клієнта")
+                    use(href="./images/sprite.svg#search")
+              |
+              |
+              table.table
+                caption.visually-hidden Customers
+                thead
+                  tr.table__row-head
+                    th.table-row__table-heading(class=fix_lefted) Customer Name
+                    th.table-row__table-heading(class=fix_lefted) Company
+                    th.table-row__table-heading Phone Number
+                    th.table-row__table-heading(class=fix_lefted) Email
+                    th.table-row__table-heading(class=fix_lefted) Country
+                    th.table-row__table-heading Status
+                tbody
+                  tr.table__row-body
+                    td.table__table-data Jane Cooper
+                    td.table__table-data Microsoft
+                    td.table__table-data(class=fix_centered) (225) 555-0118
+                    td.table__table-data jane@microsoft.com
+                    td.table__table-data United States
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-green Active
+                  tr.table__row-body
+                    td.table__table-data Floyd Miles
+                    td.table__table-data Yahoo
+                    td.table__table-data(class=fix_centered) (205) 555-0100
+                    td.table__table-data floyd@yahoo.com
+                    td.table__table-data Kiribati
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-red Inactive
+                  tr.table__row-body
+                    td.table__table-data Ronald Richards
+                    td.table__table-data Adobe
+                    td.table__table-data(class=fix_centered) (302) 555-0107
+                    td.table__table-data ronald@adobe.com
+                    td.table__table-data Israel
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-red Inactive
+                  tr.table__row-body
+                    td.table__table-data Marvin McKinney
+                    td.table__table-data Tesla
+                    td.table__table-data(class=fix_centered) (252) 555-0126
+                    td.table__table-data marvin@tesla.com
+                    td.table__table-data Iran
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-green Active
+                  tr.table__row-body
+                    td.table__table-data Jerome Bell
+                    td.table__table-data Google
+                    td.table__table-data(class=fix_centered) (629) 555-0129
+                    td.table__table-data jerome@google.com
+                    td.table__table-data Réunion
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-green Active
+                  tr.table__row-body
+                    td.table__table-data Kathryn Murphy
+                    td.table__table-data Microsoft
+                    td.table__table-data(class=fix_centered) (406) 555-0120
+                    td.table__table-data kathryn@microsoft.com
+                    td.table__table-data Curaçao
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-green Active
+                  tr.table__row-body
+                    td.table__table-data Jacob Jones
+                    td.table__table-data Yahoo
+                    td.table__table-data(class=fix_centered) (208) 555-0112
+                    td.table__table-data jacob@yahoo.com
+                    td.table__table-data Brazil
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-green Active
+                  tr.table__row-body
+                    td.table__table-data Kristin Watson
+                    td.table__table-data Facebook
+                    td.table__table-data(class=fix_centered) (704) 555-0127
+                    td.table__table-data kristin@facebook.com
+                    td.table__table-data Åland Islands
+                    td.table__table-data(class=fix_centered)
+                      button(type="button").table__table-button.table__table-button--design-red Inactive
+              div.wrapper-pages
+                p.after-table Showing data 1 to 8 of 256K entries
+                ul.list-pages
+                  li.list-pages__list-item
+                    a(href="").link-pages
+                      svg(width="8",height="12").icon-pages
+                        use(href="./images/sprite.svg#arrow-left")
+                  li.list-pages__list-item
+                    a(href="").link-pages.link-pages--current 1
+                  li.list-pages__list-item
+                    a(href="").link-pages 2 
+                  li.list-pages__list-item
+                    a(href="").link-pages 3 
+                  li.list-pages__list-item
+                    a(href="").link-pages 4 
+                  li.list-pages__list-item
+                    a(href="").link-pages.link-pages--dots ... 
+                  li.list-pages__list-item
+                    a(href="").link-pages 40 
+                  li.list-pages__list-item
+                    a(href="").link-pages
+                      svg(width="8",height="12").icon-pages
+                        use(href="./images/sprite.svg#arrow-right")
+    script(src="./js/animation.js") 
+                      
+
+
+
+
+
+
+
