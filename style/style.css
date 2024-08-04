@@ -39,6 +39,27 @@ button {
   cursor: pointer;
 }
 
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+
+  fill: #9197b3;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .container {
   min-width: 320px;
   max-width: 480px;
@@ -106,34 +127,6 @@ button {
   transform: translateX(0);
 }
 
-.sidebar-icon {
-  width: 24px;
-  height: 24px;
-
-  fill: #9197b3;
-}
-
-.sidebar-right {
-  width: 16px;
-  height: 16px;
-
-  stroke: #9197b3;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .sidebar-logo {
   margin-bottom: 20px;
 
@@ -189,22 +182,10 @@ button {
   color: #838383;
 }
 
-.sidebar-text {
-  padding: 11px 8px 11px 11px;
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  color: #9197b3;
-}
-
-.sidebar-text__sidebar-icon--dashboard {
-  stroke: #9197b3;
-  fill: transparent;
+@media screen and (max-width:1439px) {
+  .sidebar-list{
+    margin-bottom: 50px;
+  }
 }
 
 .sidebar-list__sidebar-item {
@@ -226,6 +207,24 @@ button {
 
 .sidebar-list__sidebar-item:not(:last-child) {
   margin-bottom: 18px;
+}
+
+.sidebar-text {
+  padding: 11px 8px 11px 11px;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: #9197b3;
+}
+
+.sidebar-text__sidebar-icon--dashboard {
+  stroke: #9197b3;
+  fill: transparent;
 }
 
 .sidebar-button {
@@ -250,13 +249,6 @@ button {
   background-color: rgb(231, 76, 76);
 }
 
-@media screen and (max-width:767px) {
-  .sidebar-button:hover,
-.sidebar-button:focus{
-  background-color: rgb(231, 76, 76);
-}
-}
-
 @media screen and (min-width: 768px) {
   .sidebar-button--active {
     background-color: orange;
@@ -270,19 +262,17 @@ button {
 }
 }
 
+@media screen and (max-width:767px) {
+  .sidebar-button:hover,
+.sidebar-button:focus{
+  background-color: rgb(231, 76, 76);
+}
+}
+
 @media screen and (min-width: 1440px) {
   .sidebar-button--active {
     background-color: #5932ea;
   }
-}
-
-.sidebar-icon--active {
-  stroke: #ffffff;
-  fill: var(--basic-color);
-}
-
-.sidebar-right--active {
-  stroke: var(--basic-color);
 }
 
 .sidebar-button__wrapper {
@@ -297,7 +287,21 @@ button {
   color: #9197b3;
 }
 
+.sidebar-right {
+  width: 16px;
+  height: 16px;
 
+  stroke: #9197b3;
+}
+
+.sidebar-icon--active {
+  stroke: #ffffff;
+  fill: var(--basic-color);
+}
+
+.sidebar-right--active {
+  stroke: var(--basic-color);
+}
 
 .sidebar-button:hover .sidebar-button__wrapper,
 .sidebar-button:focus .sidebar-button__wrapper{
